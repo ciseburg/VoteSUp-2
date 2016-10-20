@@ -1,0 +1,195 @@
+{
+  "AWSTemplateFormatVersion":"2010-09-09",
+  "Description":"Store CFN Outputs to consume in downstream CFN stacks",
+  "Parameters":{
+    "UUID":{
+      "Type":"String",
+      "Description":"Unique identifier to uniquely name Resources",
+      "Default":"EMPTY"
+    },
+    "MasterStackName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"Name of the VoteSUp-root.json CFN stack"
+    },
+    "VoteSUpS3Bucket":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"Name of S3 bucket used to store Jenkins config"
+    },
+    "Branch":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"Name of VoteSUp Github branch"
+    },
+    "KeyName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"EC2 KeyPair"
+    },
+    "MyBuildProvider":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"Jenkins Build Provider Name"
+    },
+    "JobConfigsTarball":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"S3 key for VoteSUpS3Bucket"
+    },
+    "Hostname":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"subdomain name"
+    },
+    "Domain":{
+      "Type":"String",
+      "Description":"Route53 Hosted Zone name for prod IP (include trailing .)",
+      "Default":"oneclickdeployment.com."
+    },
+    "ProdHostedZone":{
+      "Type":"String",
+      "Description":"Route53 Hosted Zone (e.g. PRODHOST.HOSTED.ZONE)",
+      "AllowedPattern":"^.*?\\..*?\\..*$"
+    },
+    "VPCStackName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"A stack name reference to VoteSUp-vpc.json"
+    },
+    "IAMStackName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"A stack name reference to VoteSUp-IAM.json"
+    },
+    "DDBStackName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"A stack name reference to VoteSUp-Dynamodb.json"
+    },
+    "ENIStackName":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"A stack name reference to VoteSUp-eni.json"
+    },
+    "VoteSUpAppURL":{
+      "Type":"String",
+      "Default":"EMPTY",
+      "Description":"The URL users use to launch the VoteSUp application"
+    }
+  },
+  "Resources":{
+    "MyQueue":{
+      "Type":"AWS::SQS::Queue",
+      "Properties":{
+        "QueueName":{
+          "Fn::Join":[
+            "",
+            [
+              "PipelineStoreQueue-",
+              {
+                "Ref":"UUID"
+              }
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "Outputs":{
+    "StackName":{
+      "Value":{
+        "Ref":"AWS::StackName"
+      }
+    },
+    "UUID":{
+      "Value":{
+        "Ref":"UUID"
+      }
+    },
+    "MasterStackName":{
+      "Description":"Name of the Master CFN Stack",
+      "Value":{
+        "Ref":"MasterStackName"
+      }
+    },
+    "VoteSUpS3Bucket":{
+      "Description":"Name of S3 bucket used to store Jenkins config",
+      "Value":{
+        "Ref":"VoteSUpS3Bucket"
+      }
+    },
+    "Branch":{
+      "Description":"TBD",
+      "Value":{
+        "Ref":"Branch"
+      }
+    },
+    "KeyName":{
+      "Description":"TBD",
+      "Value":{
+        "Ref":"KeyName"
+      }
+    },
+    "MyBuildProvider":{
+      "Description":"TBD",
+      "Value":{
+        "Ref":"MyBuildProvider"
+      }
+    },
+    "JobConfigsTarball":{
+      "Description":"S3 key for VoteSUpS3Bucket",
+      "Value":{
+        "Ref":"JobConfigsTarball"
+      }
+    },
+    "Hostname":{
+      "Description":"subdomain name",
+      "Value":{
+        "Ref":"Hostname"
+      }
+    },
+    "Domain":{
+      "Description":"Route53 Hosted Zone name for prod IP (include trailing .)",
+      "Value":{
+        "Ref":"Domain"
+      }
+    },
+    "ProdHostedZone":{
+      "Description":"Route53 Hosted Zone (e.g. PRODHOST.HOSTED.ZONE)",
+      "Value":{
+        "Ref":"ProdHostedZone"
+      }
+    },
+    "VPCStackName":{
+      "Description":"A stack name reference to VoteSUp-vpc.json",
+      "Value":{
+        "Ref":"VPCStackName"
+      }
+    },
+    "IAMStackName":{
+      "Description":"A stack name reference to VoteSUp-IAM.json",
+      "Value":{
+        "Ref":"IAMStackName"
+      }
+    },
+    "DDBStackName":{
+      "Description":"A stack name reference to VoteSUp-Dynamodb.json",
+      "Value":{
+        "Ref":"DDBStackName"
+      }
+    },
+    "ENIStackName":{
+      "Description":"A stack name reference to VoteSUp-eni.json",
+      "Value":{
+        "Ref":"ENIStackName"
+      }
+    },
+    "VoteSUpAppURL":{
+      "Description":"The URL users use to launch the VoteSUp application",
+      "Value":{
+        "Ref":"VoteSUpAppURL"
+      }
+    }
+  }
+}
