@@ -20,7 +20,7 @@
     "GitHubUser":{
       "Type":"String",
       "Description":"GitHub User with access to the GitHubToken.",
-      "Default":"nkchitturi"
+      "Default":"ciseburg"
     },
     "BaseTemplateURL":{
       "Type":"String",
