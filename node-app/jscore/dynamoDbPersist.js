@@ -146,15 +146,7 @@ function Constructor() {
 
   /* Increments color for specified site */
   this.incrementCount = function(siteName, colorName, cb) {
-
-    // if (colorName==='blue') {
-    //   cb(null);
-    //   return;
-    // }
-
     /*jshint -W106 */
-
-
     var updateParams = {
       TableName: ddbTableName,
       Key: {
