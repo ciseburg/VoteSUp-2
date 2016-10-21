@@ -1407,6 +1407,9 @@
             ]
           ]
         },
+        "Ec2Key":{
+          "Ref":"KeyName"
+        },
         "TimeoutInMinutes":"60",
         "Parameters":{
           "SubnetId":{
