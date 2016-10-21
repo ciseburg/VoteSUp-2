@@ -40,7 +40,7 @@
     "CodePipelineActionsCFNTemplateFile":{
       "Type":"String",
       "Description":"Custom Actions in CodePipeline CFN",
-      "Default":"VoteSUp-Codepipeline-custom-actions.json.json"
+      "Default":"VoteSUp-Codepipeline-custom-actions.json"
     },
     "ENICFNTemplateFile":{
       "Type":"String",
