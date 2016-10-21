@@ -136,8 +136,8 @@ voteSUpChartController = function () {
         onAnimationComplete: function() {
             this.showTooltip(this.segments, true);
         },
-        // tooltipTemplate: "<%= label %> - <%= value %>"
-        tooltipTemplate: "<%= label %>"
+        // tooltipTemplate: '<%= label %> - <%= value %>''
+        tooltipTemplate: '<%= label %>'
       };
 
       voteSUpDoughnutChart = new Chart(ctx).Doughnut(data, optionsDoughnut);

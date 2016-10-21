@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: VoteSUp
-# Recipe:: node_modules
+# Recipe:: install_VoteSUp
 #
 # MIT License
 # Copyright (c) 2016 
