@@ -2,7 +2,7 @@
 set -e
 
 script_dir="$(dirname "$0")"
-ENVIRONMENT_FILE="$script_dir/../environment.sh"
+ENVIRONMENT_FILE="$script_dir/../../environment.sh"
 if [ ! -f "$ENVIRONMENT_FILE" ]; then
     echo "Fatal: environment file $ENVIRONMENT_FILE does not exist!" 2>&1
     exit 1
