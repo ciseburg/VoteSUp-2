@@ -167,7 +167,7 @@
 
                 ],
                 "Configuration":{
-                  "ProjectName":"VoteSUp-staticcode-anal"
+                  "ProjectName":"VoteSUp-static-anal"
                 },
                 "RunOrder":1
               }
@@ -222,7 +222,7 @@
                   }
                 ],
                 "Configuration":{
-                  "ProjectName":"VoteSUp-acceptance-test"
+                  "ProjectName":"VoteSUp-accept-test"
                 },
                 "RunOrder":2
               },
