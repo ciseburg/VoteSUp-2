@@ -34,7 +34,7 @@ environment.sh
 node-app/localDynDB/
 
 # app files for chef 
-config-mgmt/VoteSUp/files/default/app
+cookbooks/VoteSUp/files/default/app
 
 # IDE
 .idea/

@@ -34,7 +34,7 @@ environment.sh
 localDynDB/
 
 # you might want to take this out if you ever start using files in a non-hacky way.
-config-mgmt/VoteSUp/files/default/app
+cookbooks/VoteSUp/files/default/app
 
 # IDE
 .idea/
