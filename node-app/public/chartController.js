@@ -12,8 +12,12 @@ voteSUpChartController = function () {
 
   function updateLastApiMessage(message) {
     var d = new Date();
-    lastApiHtml = '<li><span class="timestamp">' + d.toDateString() + ' ' +
-      d.toLocaleTimeString() + '</span> <span class="timestampMsg">' + message + '</span> </li>\n' + lastApiHtml;
+
+    lastApiHtml = '<li><span class="timestamp">' + d.toDateString() + ' ';
+    lastApiHtml += d.toLocaleTimeString();
+    lastApiHtml += '</span> <span class="timestampMsg">';
+    lastApiHtml += message + '</span> </li>\n' + lastApiHtml;
+
     document.getElementById('lastApiResponses').innerHTML = lastApiHtml;
   }
 
@@ -136,7 +140,7 @@ voteSUpChartController = function () {
         onAnimationComplete: function() {
             this.showTooltip(this.segments, true);
         },
-        // tooltipTemplate: '<%= label %> - <%= value %>''
+        // tooltipTemplate: '<%= label %> - <%= value %>'
         tooltipTemplate: '<%= label %>'
       };
 
