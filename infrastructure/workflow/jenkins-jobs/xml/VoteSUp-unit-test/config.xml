@@ -30,7 +30,7 @@
   <concurrentBuild>true</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/VoteSUp-unit-test.sh</command>
+      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/voteSUp-unit-test.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

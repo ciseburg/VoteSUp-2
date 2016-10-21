@@ -30,7 +30,7 @@
   <concurrentBuild>true</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/VoteSUp-staticcode-anal.sh</command>
+      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/voteSUp-staticcode-anal.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

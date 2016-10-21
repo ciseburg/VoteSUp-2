@@ -51,7 +51,7 @@ VoteSUp_ACTION_PROVIDER=ACTION_PROVIDER_PLACEHOLDER</propertiesContent>
   <concurrentBuild>true</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/VoteSUp-build.sh</command>
+      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/voteSUp-build.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>

@@ -30,7 +30,7 @@
   <concurrentBuild>true</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/VoteSUp-promote-env.sh</command>
+      <command>bash ./infrastructure/workflow/jenkins-jobs/scripts/voteSUp-promote-env.sh</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
