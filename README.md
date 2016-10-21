@@ -1,6 +1,6 @@
-# VoteSUp ![Demo CICD App](http://url/to/img.png)
+# VoteSUp
 
-<h2>Vote for your standup time<h2>
+Vote for your standup time !
 
 VoteSUp is a demo App used @CloudExpo for showcasing a DevOps workflow to achieve Continuous Integration & Continuous deployments
 
