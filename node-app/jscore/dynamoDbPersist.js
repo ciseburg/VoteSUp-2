@@ -33,7 +33,9 @@ function Constructor() {
     // if VoteSUp_DDB_TABLE_NAME is specified in the environment,
     // assume we're running in EC2
     if (process.env.hasOwnProperty('VoteSUp_DDB_TABLE_NAME')) {
+      /* jshint -W106 */
       ddbTableName = process.env.VoteSUp_DDB_TABLE_NAME;
+      /* jshint +W106 */
       ddb = new AWS.DynamoDB();
       ddb.waitFor('tableExists', { TableName: ddbTableName }, cb);
     } else {
