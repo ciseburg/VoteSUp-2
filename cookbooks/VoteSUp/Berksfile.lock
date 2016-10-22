@@ -4,7 +4,7 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  VoteSUp (1.0.0)
+  VoteSUp (0.1.0)
     nginx (>= 0.0.0)
   apt (2.8.2)
   bluepill (2.3.1)
