@@ -21,6 +21,7 @@ describe('VoteSUp_security_group') do
 
     cidr = twentytwo.first.ip_ranges.first.cidr_ip
 
+    # Uncomment below enforce SSH access security
     # expect(cidr).not_to eq "0.0.0.0/0"
   end 
 end
