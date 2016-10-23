@@ -1,5 +1,5 @@
 var expect    = require("chai").expect;
-var InMemStor = require("../jscore/inMemoryStorage.js");
+var InMemStor = require("../lib/inMemoryStorage.js");
 
 var numberOfSUTimesExpected = 4;
 var expectedSUTimeProperties = ['value', 'color', 'highlight', 'label'];

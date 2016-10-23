@@ -1,5 +1,5 @@
 var expect      = require("chai").expect;
-var reqThrottle = require("../jscore/requestThrottle.js");
+var reqThrottle = require("../lib/requestThrottle.js");
 
 describe("requestThrottle", function() {
   describe(".logIp()", function() {

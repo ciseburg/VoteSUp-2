@@ -34,7 +34,7 @@ gulp.task('test-unit', function () {
 
 // JSHint
 gulp.task('lint-app', function() {
-  return gulp.src(['.app.js', 'jscore/*.js'])
+  return gulp.src(['.app.js', 'lib/*.js'])
              .pipe(jshint())
              .pipe(jshint.reporter('default', { verbose: true }))
              .pipe(jshint.reporter('fail'));
@@ -57,9 +57,9 @@ gulp.task('cookbookfiles:app', function () {
   return gulp.src(['app.js', 'appspec.yml'] )
              .pipe(gulp.dest('cookbooks/VotesUp/files/default/app'));
 });
-gulp.task('cookbookfiles:jscore', function () {
-  return gulp.src(['jscore/*.js'] )
-             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/jscore'));
+gulp.task('cookbookfiles:lib', function () {
+  return gulp.src(['lib/*.js'] )
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/lib'));
 });
 gulp.task('cookbookfiles:public', function () {
   return gulp.src(['public/*'] )
@@ -75,7 +75,7 @@ gulp.task('cookbookfiles:package', function () {
 gulp.task('copy-to-cookbooks', function(callback) {
   runSequence(
     [ 'cookbookfiles:app',
-      'cookbookfiles:jscore',
+      'cookbookfiles:lib',
       'cookbookfiles:public',
       'cookbookfiles:package' ],
     callback
@@ -128,7 +128,7 @@ gulp.task('app:serve', function() {
   gulp.watch(['public/*'], function (file) {
     server.notify.apply(server, [file]);
   });
-  gulp.watch(['app.js', 'jscore/*.js'], function() {
+  gulp.watch(['app.js', 'lib/*.js'], function() {
     server.start.apply(server);
   });
 });
@@ -201,7 +201,7 @@ gulp.task('package-site', ['lint-chartController'],function () {
 });
 
 gulp.task('dist-app', function() {
-  return gulp.src(['package.json','index.js','app.js','jscore{,/*.js}'])
+  return gulp.src(['package.json','index.js','app.js','lib{,/*.js}'])
       .pipe(gulp.dest('dist/app/'))
       .pipe(install({production: true}));
 });
