@@ -59,7 +59,7 @@ gulp.task('cookbookfiles:app', function () {
 });
 gulp.task('cookbookfiles:lib', function () {
   return gulp.src(['jscore/*.js'] )
-             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/lib'));
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/jscore'));
 });
 gulp.task('cookbookfiles:public', function () {
   return gulp.src(['public/*'] )
@@ -201,7 +201,7 @@ gulp.task('package-site', ['lint-chartController'],function () {
 });
 
 gulp.task('dist-app', function() {
-  return gulp.src(['package.json','index.js','app.js','lib{,/*.js}'])
+  return gulp.src(['package.json','index.js','app.js','jscore{,/*.js}'])
       .pipe(gulp.dest('dist/app/'))
       .pipe(install({production: true}));
 });
