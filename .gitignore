@@ -20,18 +20,18 @@ coverage
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-node-app/build/Release
+build/Release
 
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node-app/node_modules
+/node_modules
 
 # Project ignores
-node-app/dist/
+dist/
 environment.sh
 .kitchen/
 .kitchen.local.yml
-node-app/localDynDB/
+localDynDB/
 
 # app files for chef 
 cookbooks/VoteSUp/files/default/app

@@ -11,7 +11,6 @@ if [ -z "$dest_host" ]; then
 fi
 export TARGET_URL=http://$dest_host:8080
 
-cd node-app
 npm install
 gulp test-business
 

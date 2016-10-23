@@ -29,6 +29,6 @@ if /usr/local/bin/forever list | grep -q '^data:'; then
   /usr/local/bin/forever stopall
   sleep 1
 fi
-/usr/local/bin/forever /VoteSUp/node-app/app.js >> /VoteSUp/log/server.log 2>&1 &
+/usr/local/bin/forever /VoteSUp/app.js >> /VoteSUp/log/server.log 2>&1 &
 EOH
 end

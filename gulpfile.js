@@ -23,7 +23,7 @@ var ddbLocalPort = 8079;
 
 // Delete the dist directory
 gulp.task('clean', function (cb) {
-  del(['../cookbooks/VoteSUp/files/app/*', 'dist'], cb);
+  del(['cookbooks/VoteSUp/files/app/*', 'dist'], cb);
 });
 
 // Execute unit tests
@@ -55,19 +55,19 @@ gulp.task('lint', function(callback) {
 // Copy VoteSUp app to cookbooks/VoteSUp/files/default/app
 gulp.task('cookbookfiles:app', function () {
   return gulp.src(['app.js', 'appspec.yml'] )
-             .pipe(gulp.dest('../cookbooks/VotesUp/files/default/app'));
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app'));
 });
 gulp.task('cookbookfiles:lib', function () {
   return gulp.src(['jscore/*.js'] )
-             .pipe(gulp.dest('../cookbooks/VotesUp/files/default/app/lib'));
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/lib'));
 });
 gulp.task('cookbookfiles:public', function () {
   return gulp.src(['public/*'] )
-             .pipe(gulp.dest('../cookbooks/VotesUp/files/default/app/public'));
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/public'));
 });
 gulp.task('cookbookfiles:package', function () {
   return gulp.src(['package.json'])
-             .pipe(gulp.dest('../cookbooks/VotesUp/files/default/app'))
+             .pipe(gulp.dest('cookbooks/VotesUp/files/default/app'))
              .pipe(install({production: true}));
 });
 
@@ -84,7 +84,7 @@ gulp.task('copy-to-cookbooks', function(callback) {
 
 // Copy cookbooks to dist/
 gulp.task('dist:berks-vendor', function (cb) {
-  exec('cd ../cookbooks/VoteSUp/ && berks vendor ../../node-app/dist', function (err, stdout, stderr) {
+  exec('cd cookbooks/VoteSUp/ && berks vendor ../../dist', function (err, stdout, stderr) {
     gutil.log(stdout);
     gutil.log(stderr);
     cb(err);

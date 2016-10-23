@@ -24,7 +24,6 @@ echo "export VoteSUp_custom_action_provider=$VoteSUp_ACTION_PROVIDER" >> environ
 
 # since the workspace is maintained throughout the build,
 # install dependencies now in a clear workspace
-cd node-app
 rm -rf node_modules dist
 npm install
 

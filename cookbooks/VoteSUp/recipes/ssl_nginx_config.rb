@@ -6,7 +6,7 @@
 # Copyright (c) 2016 
 #
 
-cookbook_file '/etc/nginx/sites-available/VoteSUp/node-app' do
+cookbook_file '/etc/nginx/sites-available/VoteSUp' do
   source 'nginx/ssl-VoteSUp-site.cfg'
   owner 'root'
   group 'root'
@@ -51,7 +51,7 @@ remote_file '/etc/nginx/ssl/nginx.key' do
 end
 
 link '/etc/nginx/sites-enabled/000-default' do
-  to '/etc/nginx/sites-available/VoteSUp/node-app'
+  to '/etc/nginx/sites-available/VoteSUp'
 end
 
 service 'nginx' do
