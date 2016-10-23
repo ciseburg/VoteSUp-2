@@ -57,7 +57,7 @@ gulp.task('cookbookfiles:app', function () {
   return gulp.src(['app.js', 'appspec.yml'] )
              .pipe(gulp.dest('cookbooks/VotesUp/files/default/app'));
 });
-gulp.task('cookbookfiles:lib', function () {
+gulp.task('cookbookfiles:jscore', function () {
   return gulp.src(['jscore/*.js'] )
              .pipe(gulp.dest('cookbooks/VotesUp/files/default/app/jscore'));
 });
@@ -75,7 +75,7 @@ gulp.task('cookbookfiles:package', function () {
 gulp.task('copy-to-cookbooks', function(callback) {
   runSequence(
     [ 'cookbookfiles:app',
-      'cookbookfiles:lib',
+      'cookbookfiles:jscore',
       'cookbookfiles:public',
       'cookbookfiles:package' ],
     callback
