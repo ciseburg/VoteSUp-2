@@ -113,7 +113,7 @@ gulp.task('dist', function(callback) {
 // Execute business logic or functional tests
 gulp.task('test-business', function () {
   if (process.env.hasOwnProperty('AUTOMATED_ACCEPTANCE_TEST')) {
-    process.env.TARGET_URL = 'http://localhost:' + require(__dirname + '/testLibraries/targetPort.js');
+    process.env.TARGET_URL = 'http://localhost:' + require(__dirname + '/dev-lib/targetPort.js');
   }
   return gulp.src('test-business/*.js', {read: false})
              .pipe(mocha({reporter: 'spec'}));

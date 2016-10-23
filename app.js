@@ -169,7 +169,7 @@ ddbPersist.init(function(err) {
     var port = server.address().port;
     console.log('App Server kistening on %s:%s', host, port);
     if (process.env.hasOwnProperty('AUTOMATED_ACCEPTANCE_TEST')) {
-      require('fs').writeFileSync(__dirname + '/testLibraries/targetPort.js',
+      require('fs').writeFileSync(__dirname + '/dev-lib/targetPort.js',
                                   'module.exports = ' + port + ';\n');
     }
   });
